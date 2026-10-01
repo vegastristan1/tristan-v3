@@ -1,9 +1,9 @@
 import { version } from '../data/index.js'
 
 const versions = [
-  { href: '/', id: 'v1', label: 'V1' },
+  { href: '/v1', id: 'v1', label: 'V1' },
   { href: '/v2', id: 'v2', label: 'V2' },
-  { href: '/v3', id: 'v3', label: 'V3' },
+  { href: '/', id: 'v3', label: 'V3' },
 ]
 
 export default function VersionSwitcher() {

@@ -15,10 +15,11 @@ import VersionSwitcher from './components/VersionSwitcher.jsx'
 import HexBand from './components/HexBand.jsx'
 import { version } from './data/index.js'
 
+const SHOW_VERSION_SWITCHER = false
+
 export default function App() {
   useEffect(() => {
     if (version === 'v2') document.title = 'Tristan Vegas — Portfolio V2 (Creative Hero)'
-    if (version === 'v3') document.title = 'Tristan Vegas — Portfolio V3 (Tech Hexagons)'
   }, [])
 
   return (
@@ -42,7 +43,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <VersionSwitcher />
+      {SHOW_VERSION_SWITCHER && <VersionSwitcher />}
     </div>
   )
 }

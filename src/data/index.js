@@ -2,7 +2,7 @@ import * as v1 from './resume.js'
 import * as v2 from './resumeV2.js'
 
 const path = typeof window !== 'undefined' ? window.location.pathname : '/'
-const version = /^\/v3\/?$/.test(path) ? 'v3' : /^\/v2\/?$/.test(path) ? 'v2' : 'v1'
+const version = /^\/v2\/?$/.test(path) ? 'v2' : /^\/v1\/?$/.test(path) ? 'v1' : 'v3'
 const src = version === 'v1' ? v1 : v2
 
 export { version }
