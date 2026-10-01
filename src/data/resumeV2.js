@@ -14,8 +14,8 @@ export const contact = {
   phone: '+63 921 208 9062',
   phoneHref: '+639212089062',
   location: 'Pamukid, San Fernando, Camarines Sur, Philippines',
-  github: 'https://github.com/vegastr1st1',
-  githubLabel: 'vegastr1st1',
+  github: 'https://github.com/vegastristan1',
+  githubLabel: 'vegastristan1',
   // TODO: replace with your real LinkedIn URL today
   linkedin: 'https://www.linkedin.com/in/tristan-vegas',
   linkedinLabel: 'linkedin.com/in/tristan-vegas',
@@ -90,6 +90,20 @@ export const experience = [
 ]
 
 export const projects = [
+  {
+    name: 'Dev Hub',
+    period: 'Personal Project',
+    description:
+      'A local-first developer hub that shows, runs and guides every project in one place — auto-detects apps, displays your stack, blueprints and setup guides.',
+    bullets: [
+      'Auto-detects projects from package.json, artisan or docker-compose.yml and groups them by stack.',
+      'Stack, Blueprints and Setup Guide views generated from your resume and config files.',
+      'Run/stop controls and live tool checks via a local Express server.',
+    ],
+    tools: ['Node.js', 'Express', 'React', 'Full-Stack'],
+    featured: true,
+    url: 'https://dev-hub-beta-tan.vercel.app',
+  },
   {
     name: 'Warehouse Inventory System',
     period: 'Professional',
