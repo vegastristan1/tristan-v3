@@ -1,0 +1,28 @@
+# Tristan Vegas — Web Developer Portfolio
+
+> Tristan Vegas is a detail-oriented Web Developer from the Philippines (Camarines Sur) with a Bachelor's degree in Information Technology. Full-stack experience across React, Vue.js, Angular, Node.js, Laravel, and SQL databases, plus IT systems, data analysis, and technical support. Currently learning AI integration (Python, LLM APIs).
+
+Key facts: open to full-stack / web development / IT data analysis roles; English and Filipino; remote or Philippines-based.
+
+## Pages
+
+- [Home (V3, default)](https://tristan-portfolio-v1.vercel.app/): Current portfolio version with the full profile — about, skills, experience, projects, education, contact
+- [V1](https://tristan-portfolio-v1.vercel.app/v1): Classic terminal-style version of the portfolio
+- [V2](https://tristan-portfolio-v1.vercel.app/v2): Creative version with an AI-learning section
+
+## Resumes
+
+- [Resume V2 (PDF)](https://tristan-portfolio-v1.vercel.app/resume-v2.pdf): Latest resume
+- [Resume (PDF)](https://tristan-portfolio-v1.vercel.app/resume.pdf): Classic resume
+
+## Profiles
+
+- [GitHub](https://github.com/vegastristan1): Projects and code
+- [LinkedIn](https://www.linkedin.com/in/tristan-vegas): Professional profile
+
+## Optional
+
+- Experience: IT System & Data Analyst at Milaor Trading Corporation (June 2025 — August 2026); Full Stack Developer at Foxhole QA (remote, July 2022 — March 2024); freelance web and mobile development; OJT at Tokyo System Solutions
+- Education: Bachelor of Science in Information Technology, University of Nueva Caceres (2015 — 2020)
+- Featured projects: Warehouse Inventory System (React + SQL Server), Tour & Travel Management System (Laravel + MySQL), Student Enrollment System (Laravel REST API), Dev Hub (Node.js local-first developer hub)
+- Contact: vegastristan1@gmail.com · +63 934 765 1692

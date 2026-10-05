@@ -15,8 +15,8 @@ export const contact = {
   location: "Pamukid, San Fernando, Camarines Sur, Philippines",
   github: "https://github.com/vegastristan1",
   githubLabel: "vegastristan1",
-  website: "https://tristan-portfolio-ecru.vercel.app",
-  websiteLabel: "tristan-portfolio-ecru.vercel.app",
+  website: "https://tristan-portfolio-v1.vercel.app",
+  websiteLabel: "tristan-portfolio-v1.vercel.app",
   resume: "/resume.pdf",
 };
 

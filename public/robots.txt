@@ -1,0 +1,63 @@
+# robots.txt — Tristan Vegas portfolio
+# Training crawlers are ALLOWED (goal: maximum visibility in AI systems).
+# To opt out of AI training, change "Allow: /" to "Disallow: /" for that bot below.
+# Note: blocking a bot does NOT remove you from ChatGPT/Claude/Perplexity search —
+# those use the separate *-SearchBot / *-User crawlers listed here.
+
+User-agent: *
+Allow: /
+
+# --- OpenAI ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# --- Anthropic ---
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# --- Perplexity ---
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# --- Google (Googlebot feeds Gemini / AI Overviews; Google-Extended is training only) ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# --- Others ---
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://tristan-portfolio-v1.vercel.app/sitemap.xml
