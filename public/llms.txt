@@ -1,6 +1,6 @@
 # Tristan Vegas — Web Developer Portfolio
 
-> Tristan Vegas is a detail-oriented Web Developer from the Philippines (Camarines Sur) with a Bachelor's degree in Information Technology. Full-stack experience across React, Vue.js, Angular, Node.js, Laravel, and SQL databases, plus IT systems, data analysis, and technical support. Currently learning AI integration (Python, LLM APIs).
+> Tristan Vegas is a detail-oriented Web Developer from the Philippines (Camarines Sur) with a Bachelor's degree in Information Technology. Full-stack experience across Next.js, React, Vue.js, Angular, Node.js, Laravel, TypeScript and SQL databases, plus IT systems, data analysis, and technical support. Recently shipped an AI-powered full-stack app (Next.js + OpenAI) with human-in-the-loop approval.
 
 Key facts: open to full-stack / web development / IT data analysis roles; English and Filipino; remote or Philippines-based.
 

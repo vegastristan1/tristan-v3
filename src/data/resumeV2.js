@@ -2,11 +2,11 @@
 export const profile = {
   name: "Tristan Vegas",
   role: "Web Developer",
-  heroLine: "Web Developer · Full-Stack · Learning AI Integration",
+  heroLine: "Web Developer · Full-Stack · AI Integration",
   tagline:
-    "Detail-oriented and self-motivated Web Developer with a Bachelor’s degree in Information Technology. Experienced in technical support, infrastructure management, and full-stack development. Proficient in Laravel, Vue.js, JavaScript, Node.js and cloud hosting services.",
+    "Detail-oriented and self-motivated Web Developer with a Bachelor’s degree in Information Technology. Experienced in technical support, infrastructure management, and full-stack development. Proficient in Next.js, TypeScript, React, Laravel, Vue.js, JavaScript and Node.js.",
   summary:
-    "A quality-driven professional with a strong work ethic and a passion for building efficient, user-friendly applications. Skilled in providing in-person and remote assistance, ensuring seamless user experiences. Currently expanding into AI — learning Python and LLM API integration to build AI-powered web applications.",
+    "A quality-driven professional with a strong work ethic and a passion for building efficient, user-friendly applications. Skilled in providing in-person and remote assistance, ensuring seamless user experiences. Recently built and deployed an AI-powered full-stack application (Next.js + OpenAI), expanding into LLM API integration and AI workflow design.",
 };
 
 export const contact = {
@@ -227,6 +227,8 @@ export const skillGroups = [
       "React.js",
       "Vue.js",
       "Angular",
+      "Next.js",
+      "Tailwind CSS",
     ],
   },
   {
@@ -239,11 +241,11 @@ export const skillGroups = [
   },
   {
     title: "Databases",
-    skills: ["PostgreSQL", "MySQL", "SQL", "SQL Server"],
+    skills: ["PostgreSQL", "MySQL", "SQL", "SQL Server", "Prisma"],
   },
   {
     title: "DevOps & Cloud",
-    skills: ["Docker", "AWS"],
+    skills: ["Docker", "AWS", "Vercel"],
   },
   {
     title: "Architecture & Development",
@@ -251,8 +253,12 @@ export const skillGroups = [
       "MVC",
       "API Development",
       "Authentication & Authorization",
-      "Manual QA Testing",
+      "Zod (Validation)",
     ],
+  },
+  {
+    title: "Testing & Quality",
+    skills: ["Vitest", "Playwright", "ESLint", "Prettier", "Manual QA Testing"],
   },
   {
     title: "Tools & Version Control",
