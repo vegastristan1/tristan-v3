@@ -1,4 +1,4 @@
-import { profile, contact } from '../data/index.js'
+import { profile, contact, projects } from '../data/index.js'
 
 export default function Hero() {
   return (
@@ -52,7 +52,7 @@ export default function Hero() {
           <div className="mt-14 grid max-w-2xl grid-cols-2 gap-6 border-t border-zinc-800 pt-8 sm:grid-cols-4">
             {[
               { value: '5+', label: 'Years Experience' },
-              { value: '7+', label: 'Projects' },
+              { value: `${projects.length}+`, label: 'Projects' },
               { value: '10+', label: 'Technologies' },
               { value: 'BS', label: 'IT Graduate' },
             ].map((s) => (

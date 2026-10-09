@@ -24,5 +24,5 @@ Key facts: open to full-stack / web development / IT data analysis roles; Englis
 
 - Experience: IT System & Data Analyst at Milaor Trading Corporation (June 2025 — August 2026); Full Stack Developer at Foxhole QA (remote, July 2022 — March 2024); freelance web and mobile development; OJT at Tokyo System Solutions
 - Education: Bachelor of Science in Information Technology, University of Nueva Caceres (2015 — 2020)
-- Featured projects: Warehouse Inventory System (React + SQL Server), Tour & Travel Management System (Laravel + MySQL), Student Enrollment System (Laravel REST API), Dev Hub (Node.js local-first developer hub)
+- Featured projects: AI Developer Task Manager (Next.js + PostgreSQL + Prisma + OpenAI), Warehouse Inventory System (React + SQL Server), Tour & Travel Management System (Laravel + MySQL), Student Enrollment System (Laravel REST API), Dev Hub (Node.js local-first developer hub)
 - Contact: vegastristan1@gmail.com · +63 934 765 1692

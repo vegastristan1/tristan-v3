@@ -100,6 +100,20 @@ export const experience = [
 
 export const projects = [
   {
+    name: "AI Developer Task Manager",
+    period: "Personal Project",
+    description:
+      "An AI-powered task and project management platform for software developers — turns high-level requirements into actionable tasks, sprints and subtasks with AI assistance and human approval at every step.",
+    bullets: [
+      "Full-stack Next.js + TypeScript app on PostgreSQL (Neon) with Prisma ORM, Auth.js sessions and Zod-validated route handlers and server actions.",
+      "AI actions — task breakdown, implementation plans, acceptance criteria, complexity estimates and technical review — go through an explicit approve/reject workflow.",
+      "Kanban drag-and-drop, sprints, task dependencies with blocked-task detection, developer dashboard, command palette, dark and light mode.",
+    ],
+    tools: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "OpenAI"],
+    featured: true,
+    url: "https://ai-developer-task-manager.vercel.app",
+  },
+  {
     name: "Dev Hub",
     period: "Personal Project",
     description:
@@ -248,14 +262,14 @@ export const skillGroups = [
 
 export const ai = {
   statement:
-    "I am currently expanding into AI — learning how to integrate LLM APIs and build AI-powered features into full-stack applications.",
+    "I have moved from learning AI integration into shipping it — I built and deployed an AI-powered full-stack application that calls the OpenAI API, returns structured AI responses, and keeps a human in the loop with an explicit approve/reject workflow before any AI suggestion is applied.",
   items: [
     { name: "Python (fundamentals)", status: "Learning" },
-    { name: "LLM API Integration (OpenAI / Claude)", status: "Learning" },
+    { name: "LLM API Integration (OpenAI)", status: "Shipped in a real app" },
     { name: "Prompt Engineering", status: "Practicing" },
     {
-      name: "AI-Assisted Development (Copilot / Claude)",
-      status: "In daily workflow",
+      name: "AI Workflows (human-in-the-loop approval)",
+      status: "Built in production",
     },
   ],
 };
