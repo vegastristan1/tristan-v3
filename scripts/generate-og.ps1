@@ -42,8 +42,8 @@ $fontUrl = New-Object System.Drawing.Font("Consolas", 14, [System.Drawing.FontSt
 
 $g.DrawString("PORTFOLIO", $fontLabel, $amberBrush, 90, 118)
 $g.DrawString("Tristan Vegas", $fontTitle, $white, 88, 158)
-$g.DrawString("Web Developer | Full-Stack | Data Analyst", $fontRole, $zinc300, 90, 252)
-$g.DrawString("React - Node.js - Laravel - SQL - IT Data Analysis", $fontStack, $zinc400, 90, 306)
+$g.DrawString("Web Developer | Full-Stack | AI Integration", $fontRole, $zinc300, 90, 252)
+$g.DrawString("Next.js - React - TypeScript - Node.js - Laravel - OpenAI", $fontStack, $zinc400, 90, 306)
 $g.DrawString("Camarines Sur, Philippines | Open to opportunities", $fontStack, $zinc500, 90, 348)
 
 # Divider + footer

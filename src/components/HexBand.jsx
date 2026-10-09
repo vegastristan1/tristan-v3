@@ -15,9 +15,13 @@ import {
   siSwift,
   siFirebase,
   siGit,
+  siNextdotjs,
+  siPrisma,
+  siVercel,
 } from 'simple-icons'
 
 const TECHS = [
+  { name: 'Next.js', icon: siNextdotjs },
   { name: 'React', icon: siReact },
   { name: 'Node.js', icon: siNodedotjs },
   { name: 'TypeScript', icon: siTypescript },
@@ -28,8 +32,11 @@ const TECHS = [
   { name: 'Angular', icon: siAngular },
   { name: 'MySQL', icon: siMysql },
   { name: 'PostgreSQL', icon: siPostgresql },
+  { name: 'Prisma', icon: siPrisma },
   { name: 'Docker', icon: siDocker },
   { name: 'AWS', label: 'AWS' },
+  { name: 'Vercel', icon: siVercel },
+  { name: 'OpenAI', label: 'OpenAI' },
   { name: 'C# / .NET', icon: siSharp },
   { name: 'Swift (iOS)', icon: siSwift },
   { name: 'Firebase', icon: siFirebase },

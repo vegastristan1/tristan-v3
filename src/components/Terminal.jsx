@@ -4,7 +4,7 @@ const script = [
   { kind: 'cmd', text: 'whoami' },
   { kind: 'out', text: 'tristan-vegas' },
   { kind: 'cmd', text: 'cat skills.txt' },
-  { kind: 'out', text: 'React · Node.js · Laravel · SQL' },
+  { kind: 'out', text: 'Next.js · React · Node.js · Laravel · OpenAI' },
   { kind: 'cmd', text: 'cat status.txt' },
   { kind: 'out', text: 'Open to work ✓' },
 ]
