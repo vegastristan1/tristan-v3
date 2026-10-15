@@ -12,7 +12,6 @@ import Education from './components/Education.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import VersionSwitcher from './components/VersionSwitcher.jsx'
-import HexBand from './components/HexBand.jsx'
 import { version } from './data/index.js'
 
 const SHOW_VERSION_SWITCHER = false
@@ -24,11 +23,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
-      {version === 'v3' && (
-        <div className="pointer-events-none fixed inset-0 -z-10 opacity-40" aria-hidden="true">
-          <HexBand />
-        </div>
-      )}
       <Navbar />
       <main>
         {version === 'v1' && <Hero />}

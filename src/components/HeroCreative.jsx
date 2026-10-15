@@ -1,4 +1,5 @@
 import Terminal from './Terminal.jsx'
+import HexBand from './HexBand.jsx'
 import useTypewriter from '../hooks/useTypewriter.js'
 import { profile, contact } from '../data/index.js'
 
@@ -14,12 +15,17 @@ function AnimatedWord({ word, baseDelay = 0, className = '' }) {
   )
 }
 
-export default function HeroCreative({ showGrid = true }) {
+export default function HeroCreative({ showGrid = true, showBand = false }) {
   const typedRole = useTypewriter(profile.heroLine, { speed: 45, startDelay: 1400 })
 
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
+        {showBand && (
+          <div className="absolute inset-0 opacity-40" aria-hidden="true">
+            <HexBand />
+          </div>
+        )}
         <div className="absolute -top-32 right-[-10%] h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
         <div className="absolute bottom-0 left-[-10%] h-80 w-80 rounded-full bg-emerald-700/10 blur-3xl" />
         {showGrid && (
