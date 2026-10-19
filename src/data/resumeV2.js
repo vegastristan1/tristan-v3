@@ -50,7 +50,7 @@ export const experience = [
     ],
   },
   {
-    period: "July 2022 — March 2024",
+    period: "May 2022 — March 2024",
     title: "Full Stack Developer",
     company: "Foxhole QA",
     place: "Austin, Texas, United States",
