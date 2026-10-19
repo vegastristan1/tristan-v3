@@ -1,28 +1,41 @@
-import Terminal from './Terminal.jsx'
-import HexBand from './HexBand.jsx'
-import useTypewriter from '../hooks/useTypewriter.js'
-import { profile, contact } from '../data/index.js'
+import Terminal from "./Terminal.jsx";
+import HexBand from "./HexBand.jsx";
+import useTypewriter from "../hooks/useTypewriter.js";
+import { profile, contact } from "../data/index.js";
 
-function AnimatedWord({ word, baseDelay = 0, className = '' }) {
+function AnimatedWord({ word, baseDelay = 0, className = "" }) {
   return (
     <span className={className}>
-      {word.split('').map((ch, i) => (
-        <span key={i} className="letter-in" style={{ animationDelay: `${baseDelay + i * 55}ms` }}>
+      {word.split("").map((ch, i) => (
+        <span
+          key={i}
+          className="letter-in"
+          style={{ animationDelay: `${baseDelay + i * 55}ms` }}
+        >
           {ch}
         </span>
       ))}
     </span>
-  )
+  );
 }
 
-export default function HeroCreative({ showGrid = true, showBand = false }) {
-  const typedRole = useTypewriter(profile.heroLine, { speed: 45, startDelay: 1400 })
+export default function HeroCreative({ showGrid = true, showHex = false }) {
+  const typedRole = useTypewriter(profile.heroLine, {
+    speed: 45,
+    startDelay: 1400,
+  });
 
   return (
-    <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
+    <section
+      id="top"
+      className="relative flex min-h-screen items-center overflow-hidden"
+    >
       <div className="pointer-events-none absolute inset-0">
         {showHex && (
-          <div className="absolute inset-0 overflow-hidden opacity-40" aria-hidden="true">
+          <div
+            className="absolute inset-0 overflow-hidden opacity-40"
+            aria-hidden="true"
+          >
             <HexBand />
           </div>
         )}
@@ -31,8 +44,8 @@ export default function HeroCreative({ showGrid = true, showBand = false }) {
             className="absolute inset-0 opacity-[0.04]"
             style={{
               backgroundImage:
-                'linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)',
-              backgroundSize: '56px 56px',
+                "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
+              backgroundSize: "56px 56px",
             }}
           />
         )}
@@ -46,15 +59,26 @@ export default function HeroCreative({ showGrid = true, showBand = false }) {
               Available for work
             </span>
 
-            <p className="fade-up mt-6 text-sm text-zinc-500" style={{ animationDelay: '150ms' }}>
+            <p
+              className="fade-up mt-6 text-sm text-zinc-500"
+              style={{ animationDelay: "150ms" }}
+            >
               Hi, I&apos;m
             </p>
             <h1
               className="mt-1 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-6xl"
               aria-label={`${profile.name}`}
             >
-              <AnimatedWord word={profile.name.split(' ')[0]} baseDelay={250} className="block text-white" />
-              <AnimatedWord word={profile.name.split(' ')[1]} baseDelay={650} className="block text-emerald-400" />
+              <AnimatedWord
+                word={profile.name.split(" ")[0]}
+                baseDelay={250}
+                className="block text-white"
+              />
+              <AnimatedWord
+                word={profile.name.split(" ")[1]}
+                baseDelay={650}
+                className="block text-emerald-400"
+              />
             </h1>
 
             <p className="mt-5 min-h-[1.6em] font-mono text-sm text-zinc-300 sm:text-base">
@@ -62,11 +86,17 @@ export default function HeroCreative({ showGrid = true, showBand = false }) {
               <span className="caret" />
             </p>
 
-            <p className="fade-up mt-6 max-w-xl text-base leading-relaxed text-zinc-400" style={{ animationDelay: '1800ms' }}>
+            <p
+              className="fade-up mt-6 max-w-xl text-base leading-relaxed text-zinc-400"
+              style={{ animationDelay: "1800ms" }}
+            >
               {profile.tagline}
             </p>
 
-            <div className="fade-up mt-8 flex flex-wrap items-center gap-4" style={{ animationDelay: '2000ms' }}>
+            <div
+              className="fade-up mt-8 flex flex-wrap items-center gap-4"
+              style={{ animationDelay: "2000ms" }}
+            >
               <a
                 href="#contact"
                 className="rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-400"
@@ -83,11 +113,11 @@ export default function HeroCreative({ showGrid = true, showBand = false }) {
             </div>
           </div>
 
-          <div className="fade-up" style={{ animationDelay: '900ms' }}>
+          <div className="fade-up" style={{ animationDelay: "900ms" }}>
             <Terminal />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
