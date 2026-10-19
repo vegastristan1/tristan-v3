@@ -1,4 +1,4 @@
-import { contact, education, languages, modernCopy } from "../../data/index.js";
+import { education, languages, modernCopy } from "../../data/index.js";
 
 export default function ModernEducation() {
   return (
