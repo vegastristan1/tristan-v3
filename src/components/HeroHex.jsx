@@ -1,5 +1,5 @@
-import HeroCreative from './HeroCreative.jsx'
+import HeroCreative from "./HeroCreative.jsx";
 
 export default function HeroHex() {
-  return <HeroCreative showGrid={false} showHex />
+  return <HeroCreative showGrid={false} showBand />;
 }
