@@ -20,7 +20,7 @@ export const contact = {
   linkedinLabel: "linkedin.com/in/tristan-vegas",
   website: "https://tristan-portfolio-v1.vercel.app",
   websiteLabel: "tristan-portfolio-v1.vercel.app",
-  resume: "/resume-v2.pdf",
+  resume: "/Tristan-Vegas-Resume.pdf",
 };
 
 export const sectionNum = {
