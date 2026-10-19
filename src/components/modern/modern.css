@@ -42,7 +42,7 @@
 .modern .btn:hover { transform: translateY(-2px) }
 .modern .btn.p { background: var(--text); color: var(--bg) }
 .modern .social { display: flex; gap: 16px; margin-top: 22px; font-size: 14px; color: var(--muted) }
-.modern .avatar { position: relative; justify-self: center; width: min(320px, 80vw); aspect-ratio: 1; border-radius: 50%; background: var(--accent-soft); border: 2px solid var(--line); display: grid; place-items: center; cursor: pointer; overflow: visible }
+.modern .avatar { position: relative; justify-self: center; width: min(320px, 80vw); aspect-ratio: 1; border-radius: 50%; background: var(--accent-soft); border: 2px solid var(--line); display: grid; place-items: center; overflow: visible }
 .modern .avatar > svg, .modern .avatar > img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; animation: bob 4s ease-in-out infinite }
 .modern .avatar .tag { position: absolute; bottom: -6px; right: 6px; background: var(--surface); border: 1px solid var(--line); padding: 5px 12px; border-radius: 99px; font-size: 12px; color: var(--muted); box-shadow: 0 4px 14px rgba(0, 0, 0, .08) }
 @keyframes bob { 50% { transform: translateY(-6px) } }
@@ -77,3 +77,14 @@
 .modern .contact .btns { justify-content: center }
 .modern .ai-p { margin: 0 0 6px; color: var(--text) }
 .modern footer { padding: 28px 0; text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line) }
+
+/* --- custom additions: hero word rotation + avatar crossfade --- */
+.modern .rot { position: relative; display: inline-block; color: var(--accent) }
+.modern .rot .sizer { visibility: hidden }
+.modern .rot b { position: absolute; left: 0; top: 0; font-weight: inherit; opacity: 0; animation: wordFade 12s infinite }
+@keyframes wordFade { 0%, 20% { opacity: 1 } 25%, 95% { opacity: 0 } 100% { opacity: 1 } }
+@media (prefers-reduced-motion: reduce) { .modern .rot b { animation: none; opacity: 0 } .modern .rot b:first-of-type { opacity: 1 } }
+.modern .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap }
+/* shortcut: plain crossfade for now; upgrade to a pixel-dissolve (canvas or stepped clip-path) once the hover version has been seen */
+.modern .avatar > img.alt { position: absolute; inset: 0; opacity: 0; transition: opacity .4s; animation: none }
+.modern .avatar:hover > img.alt, .modern .avatar:focus-within > img.alt { opacity: 1 }
