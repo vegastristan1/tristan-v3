@@ -2,8 +2,11 @@
 // Update your info there once; all versions change together.
 export * from "./resume.js";
 
-// Root view: set VITE_ROOT_VERSION env var (v1|v2|v3) in Vercel + redeploy; defaults to v3.
+// Root view: set VITE_ROOT_VERSION env var (v1|v2|v3) in Vercel + redeploy; defaults to v1.
 const ROOT_VERSION = import.meta.env.VITE_ROOT_VERSION || "v1";
+// Avatar auto-swap effect: set VITE_AVATAR_TRANSITION (fade|pixel1|pixel2) + redeploy; defaults to pixel1.
+export const avatarTransition =
+  import.meta.env.VITE_AVATAR_TRANSITION || "pixel2";
 const path = typeof window !== "undefined" ? window.location.pathname : "/";
 export const version = /^\/v1\/?$/.test(path)
   ? "v1"
