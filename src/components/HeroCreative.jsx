@@ -15,7 +15,7 @@ function AnimatedWord({ word, baseDelay = 0, className = '' }) {
   )
 }
 
-export default function HeroCreative({ showGrid = true, showHex = false }) {
+export default function HeroCreative({ showGrid = true, showBand = false }) {
   const typedRole = useTypewriter(profile.heroLine, { speed: 45, startDelay: 1400 })
 
   return (
