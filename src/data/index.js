@@ -1,19 +1,18 @@
-import * as v1 from './resume.js'
-import * as v2 from './resumeV2.js'
+// Single global data source — every version (v1 modern, v2, v3) reads resume.js.
+// Update your info there once; all versions change together.
+export * from "./resume.js";
 
-const path = typeof window !== 'undefined' ? window.location.pathname : '/'
-const version = /^\/v2\/?$/.test(path) ? 'v2' : /^\/v1\/?$/.test(path) ? 'v1' : 'v3'
-const src = version === 'v1' ? v1 : v2
+const path = typeof window !== "undefined" ? window.location.pathname : "/";
+export const version = /^\/v2\/?$/.test(path) ? "v2" : /^\/v1\/?$/.test(path) ? "v1" : "v3";
+export const isV2 = version === "v2";
 
-export { version }
-export const isV2 = version === 'v2'
-export const profile = src.profile
-export const contact = src.contact
-export const experience = src.experience
-export const projects = src.projects
-export const skillGroups = src.skillGroups
-export const softSkills = src.softSkills
-export const education = src.education
-export const languages = src.languages
-export const sectionNum = src.sectionNum
-export const ai = version === 'v1' ? null : src.ai
+// Version-specific presentation copy (design text only — shared facts live in resume.js).
+export const modernCopy = {
+  eyebrow: "Open to work · Philippines 🇵🇭",
+  intro:
+    "Full-stack web developer with a BSIT degree, working with Next.js, React, TypeScript, Laravel and PostgreSQL. Lately I’m shipping AI-powered apps with human-in-the-loop workflows.",
+  avatarTag: "📷 click to add your photo",
+  basedLine: "Based in San Fernando, Camarines Sur. Remote-friendly.",
+  contactBlurb: "Have a project, a role, or just a question? My inbox is open.",
+  footer: "© 2026 Tristan Vegas · Built with care",
+};

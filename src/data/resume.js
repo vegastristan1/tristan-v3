@@ -1,11 +1,12 @@
+// V2 — updated positioning for AI-era job hunting.
 export const profile = {
   name: "Tristan Vegas",
   role: "Web Developer",
-  heroLine: "Web Developer · Full-Stack · Data Analyst",
+  heroLine: "Web Developer · Full-Stack · AI Integration",
   tagline:
-    "Detail-oriented and self-motivated Web Developer with a Bachelor’s degree in Information Technology. Experienced in technical support, infrastructure management, and full-stack development. Proficient in Laravel, Vue.js, JavaScript, Node.js and cloud hosting services.",
+    "Detail-oriented and self-motivated Web Developer with a Bachelor’s degree in Information Technology. Experienced in technical support, infrastructure management, and full-stack development. Proficient in Next.js, TypeScript, React, Laravel, Vue.js, JavaScript and Node.js.",
   summary:
-    "A quality-driven professional with a strong work ethic and a passion for building efficient, user-friendly applications. Skilled in providing in-person and remote assistance, ensuring seamless user experiences.",
+    "A quality-driven professional with a strong work ethic and a passion for building efficient, user-friendly applications. Skilled in providing in-person and remote assistance, ensuring seamless user experiences. Recently built and deployed an AI-powered full-stack application (Next.js + OpenAI), expanding into LLM API integration and AI workflow design.",
 };
 
 export const contact = {
@@ -15,18 +16,21 @@ export const contact = {
   location: "Pamukid, San Fernando, Camarines Sur, Philippines",
   github: "https://github.com/vegastristan1",
   githubLabel: "vegastristan1",
+  linkedin: "https://www.linkedin.com/in/tristan-vegas",
+  linkedinLabel: "linkedin.com/in/tristan-vegas",
   website: "https://tristan-portfolio-v1.vercel.app",
   websiteLabel: "tristan-portfolio-v1.vercel.app",
-  resume: "/resume.pdf",
+  resume: "/Tristan-Vegas-Resume.pdf",
 };
 
 export const sectionNum = {
   about: "01",
   skills: "02",
-  experience: "03",
-  projects: "04",
-  education: "05",
-  contact: "06",
+  ai: "03",
+  experience: "04",
+  projects: "05",
+  education: "06",
+  contact: "07",
 };
 
 export const experience = [
@@ -46,15 +50,28 @@ export const experience = [
     ],
   },
   {
-    period: "July 2022 — March 2024",
+    period: "May 2022 — March 2024",
     title: "Full Stack Developer",
     company: "Foxhole QA",
     place: "Austin, Texas, United States",
     type: "Remote",
+    stack: [
+      "PHP",
+      "Laravel",
+      "Vue.js",
+      "MySQL",
+      "Node.js",
+      "Swift (iOS)",
+      "Android",
+      "Firebase",
+      "VS Code",
+    ],
     bullets: [
       "Created and managed the Foxhole QA website with an admin dashboard for updates on blogs, featured works, and testimonials.",
-      "Provided ongoing maintenance and support for website functionality.",
+      "Developed full-stack web applications and mobile applications for both iOS and Android.",
       "Specialized in Mobile Development and Data Analytics tasks, ensuring diverse client needs were met effectively.",
+      "Performed manual QA testing to identify and report bugs, ensuring reliable releases.",
+      "Provided ongoing maintenance and support for website functionality.",
     ],
   },
   {
@@ -82,6 +99,34 @@ export const experience = [
 ];
 
 export const projects = [
+  {
+    name: "AI Developer Task Manager",
+    period: "Personal Project",
+    description:
+      "An AI-powered task and project management platform for software developers — turns high-level requirements into actionable tasks, sprints and subtasks with AI assistance and human approval at every step.",
+    bullets: [
+      "Full-stack Next.js + TypeScript app on PostgreSQL (Neon) with Prisma ORM, Auth.js sessions and Zod-validated route handlers and server actions.",
+      "AI actions — task breakdown, implementation plans, acceptance criteria, complexity estimates and technical review — go through an explicit approve/reject workflow.",
+      "Kanban drag-and-drop, sprints, task dependencies with blocked-task detection, developer dashboard, command palette, dark and light mode.",
+    ],
+    tools: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "OpenAI"],
+    featured: true,
+    url: "https://ai-developer-task-manager.vercel.app",
+  },
+  {
+    name: "Dev Hub",
+    period: "Personal Project",
+    description:
+      "A local-first developer hub that shows, runs and guides every project in one place — auto-detects apps, displays your stack, blueprints and setup guides.",
+    bullets: [
+      "Auto-detects projects from package.json, artisan or docker-compose.yml and groups them by stack.",
+      "Stack, Blueprints and Setup Guide views generated from your resume and config files.",
+      "Run/stop controls and live tool checks via a local Express server.",
+    ],
+    tools: ["Node.js", "Express", "React", "Full-Stack"],
+    featured: true,
+    url: "https://dev-hub-beta-tan.vercel.app",
+  },
   {
     name: "Warehouse Inventory System",
     period: "Professional",
@@ -182,6 +227,8 @@ export const skillGroups = [
       "React.js",
       "Vue.js",
       "Angular",
+      "Next.js",
+      "Tailwind CSS",
     ],
   },
   {
@@ -189,22 +236,49 @@ export const skillGroups = [
     skills: ["Node.js", "Express.js", "Laravel", "REST APIs"],
   },
   {
+    title: "Mobile Development",
+    skills: ["Swift (iOS)", "Xcode", "Android", "Firebase"],
+  },
+  {
     title: "Databases",
-    skills: ["PostgreSQL", "MySQL", "SQL", "SQL Server"],
+    skills: ["PostgreSQL", "MySQL", "SQL", "SQL Server", "Prisma"],
   },
   {
     title: "DevOps & Cloud",
-    skills: ["Docker", "AWS"],
+    skills: ["Docker", "AWS", "Vercel"],
   },
   {
     title: "Architecture & Development",
-    skills: ["MVC", "API Development", "Authentication & Authorization"],
+    skills: [
+      "MVC",
+      "API Development",
+      "Authentication & Authorization",
+      "Zod (Validation)",
+    ],
+  },
+  {
+    title: "Testing & Quality",
+    skills: ["Vitest", "Playwright", "ESLint", "Prettier", "Manual QA Testing"],
   },
   {
     title: "Tools & Version Control",
-    skills: ["Git", "GitHub", "npm"],
+    skills: ["Git", "GitHub", "npm", "VS Code"],
   },
 ];
+
+export const ai = {
+  statement:
+    "I have moved from learning AI integration into shipping it — I built and deployed an AI-powered full-stack application that calls the OpenAI API, returns structured AI responses, and keeps a human in the loop with an explicit approve/reject workflow before any AI suggestion is applied.",
+  items: [
+    { name: "Python (fundamentals)", status: "Learning" },
+    { name: "LLM API Integration (OpenAI)", status: "Shipped in a real app" },
+    { name: "Prompt Engineering", status: "Practicing" },
+    {
+      name: "AI Workflows (human-in-the-loop approval)",
+      status: "Built in production",
+    },
+  ],
+};
 
 export const softSkills = [
   "Strong communication and collaboration",

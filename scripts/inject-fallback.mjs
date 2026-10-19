@@ -128,15 +128,15 @@ function injectFallback(html, fallbackHtml) {
   return html.replace(marker, `<div id="root">${fallbackHtml}</div>`)
 }
 
-const v1 = await import(pathToFileURL(resolve(root, 'src/data/resume.js')).href)
-const v2 = await import(pathToFileURL(resolve(root, 'src/data/resumeV2.js')).href)
+// Single global data source (was resumeV2.js) — v1 (modern), v2 and v3 fallbacks all share it.
+const data = await import(pathToFileURL(resolve(root, 'src/data/resume.js')).href)
 
 const base = readFileSync(resolve(dist, 'index.html'), 'utf8')
 
 const routes = [
-  { out: 'index.html', canonical: `${SITE}/`, title: null, data: v2, withAi: true },
-  { out: 'v1/index.html', canonical: `${SITE}/v1`, title: 'Tristan Vegas — Web Developer Portfolio (V1)', data: v1, withAi: false },
-  { out: 'v2/index.html', canonical: `${SITE}/v2`, title: 'Tristan Vegas — Web Developer Portfolio (V2)', data: v2, withAi: true },
+  { out: 'index.html', canonical: `${SITE}/`, title: null, data, withAi: true },
+  { out: 'v1/index.html', canonical: `${SITE}/v1`, title: 'Tristan Vegas — Portfolio (Modern)', data, withAi: true },
+  { out: 'v2/index.html', canonical: `${SITE}/v2`, title: 'Tristan Vegas — Web Developer Portfolio (V2)', data, withAi: true },
 ]
 
 for (const route of routes) {
