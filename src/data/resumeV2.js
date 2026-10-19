@@ -20,7 +20,7 @@ export const contact = {
   linkedinLabel: "linkedin.com/in/tristan-vegas",
   website: "https://tristan-portfolio-v1.vercel.app",
   websiteLabel: "tristan-portfolio-v1.vercel.app",
-  resume: "/resume-v2.pdf",
+  resume: "/Tristan-Vegas-Resume.pdf",
 };
 
 export const sectionNum = {
@@ -50,7 +50,7 @@ export const experience = [
     ],
   },
   {
-    period: "July 2022 — March 2024",
+    period: "May 2022 — March 2024",
     title: "Full Stack Developer",
     company: "Foxhole QA",
     place: "Austin, Texas, United States",

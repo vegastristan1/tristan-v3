@@ -7,8 +7,8 @@ $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $html = Join-Path $PSScriptRoot 'resume-v2.html'
 $outDir = Join-Path $root 'public'
-$pdfPath = Join-Path $outDir 'resume-v2.pdf'
-$docxPath = Join-Path $outDir 'Resume-Tristan-Vegas-v2.docx'
+$pdfPath = Join-Path $outDir 'Tristan-Vegas-Resume.pdf'
+$docxPath = Join-Path $outDir 'Tristan-Vegas-Resume.docx'
 $tmpDocx = Join-Path $outDir '_wdout.docx'
 
 $edge = @(

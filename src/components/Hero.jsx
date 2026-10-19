@@ -4,8 +4,6 @@ export default function Hero() {
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 right-[-10%] h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
-        <div className="absolute bottom-0 left-[-10%] h-80 w-80 rounded-full bg-emerald-700/10 blur-3xl" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
