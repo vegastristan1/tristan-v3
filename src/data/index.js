@@ -2,8 +2,11 @@
 // Update your info there once; all versions change together.
 export * from "./resume.js";
 
+// Root view: set VITE_ROOT_VERSION env var (v1|v2|v3) in Vercel + redeploy; defaults to v3.
+const ROOT_VERSION = import.meta.env.VITE_ROOT_VERSION || "v3";
 const path = typeof window !== "undefined" ? window.location.pathname : "/";
-export const version = /^\/v2\/?$/.test(path) ? "v2" : /^\/v1\/?$/.test(path) ? "v1" : "v3";
+export const version =
+  /^\/v1\/?$/.test(path) ? "v1" : /^\/v2\/?$/.test(path) ? "v2" : /^\/v3\/?$/.test(path) ? "v3" : ROOT_VERSION;
 export const isV2 = version === "v2";
 
 // Version-specific presentation copy (design text only — shared facts live in resume.js).
