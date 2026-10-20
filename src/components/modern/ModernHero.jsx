@@ -1,171 +1,124 @@
-import { useEffect, useRef, useState } from "react";
-import { avatarTransition, contact, modernCopy } from "../../data/index.js";
+import { useEffect, useRef } from "react";
+import { contact, modernCopy } from "../../data/index.js";
 
-// Profile picture: public/avatar.webp (was the chibi SVG placeholder — see README.md in this folder to restore it).
-// Avatar auto-swaps every 3s: fade = crossfade, pixel1 = current photo pops out in tiles revealing the new one,
-// pixel2 = new photo fills in tile-by-tile. Layer stack lives in modern.css.
-const widestWord = [...modernCopy.heroRotating].sort(
-  (a, b) => b.length - a.length,
-)[0];
-
-const PX_GRID = 50; // 50×50 = 2500 tiny tiles — raise = smaller pixels
-const PX_LADDER = Array.from({ length: 15 }, (_, i) => (i / 10) ** 2); // fraction of tiles present: .01 = 1 box → 1 = all 100 (quadratic = slow start, accelerating fill)
-const PX_STEP_MS = 67;
-const isPixel = avatarTransition === "pixel1" || avatarTransition === "pixel2";
-
-function shuffledTiles() {
-  const t = Array.from({ length: PX_GRID * PX_GRID }, (_, i) => i);
-  for (let i = t.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [t[i], t[j]] = [t[j], t[i]];
-  }
-  return t;
+/* Ring cursor that grows over links and buttons */
+function Cursor() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const move = (e) => {
+      const el = ref.current;
+      if (!el) return;
+      el.style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+      el.classList.toggle("big", !!e.target.closest("a,button"));
+    };
+    addEventListener("mousemove", move);
+    return () => removeEventListener("mousemove", move);
+  }, []);
+  return <div className="cursor" ref={ref} />;
 }
 
-function drawTiles(canvas, img, frac, order) {
-  const ctx = canvas.getContext("2d");
-  const W = canvas.width,
-    H = canvas.height;
-  ctx.clearRect(0, 0, W, H);
-  if (!frac || !img.naturalWidth) return;
-  const nw = img.naturalWidth,
-    nh = img.naturalHeight;
-  // cover-crop centered = CSS object-fit: cover on the imgs below (canvas aspect must match .avatar)
-  const s = Math.max(W / nw, H / nh),
-    sw = W / s,
-    sh = H / s,
-    sx = (nw - sw) / 2,
-    sy = (nh - sh) / 2,
-    tw = sw / PX_GRID,
-    th = sh / PX_GRID,
-    dW = W / PX_GRID,
-    dH = H / PX_GRID;
-  const shown = Math.round(frac * PX_GRID * PX_GRID);
-  for (let k = 0; k < shown; k++) {
-    const idx = order[k],
-      c = idx % PX_GRID,
-      r = (idx / PX_GRID) | 0;
-    ctx.drawImage(
-      img,
-      sx + c * tw,
-      sy + r * th,
-      tw,
-      th,
-      c * dW,
-      r * dH,
-      dW,
-      dH,
-    );
-  }
-}
+/* Buttons that lean toward the cursor */
+const mag = {
+  onMouseMove: (e) => {
+    const el = e.currentTarget;
+    const r = el.getBoundingClientRect();
+    el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.3}px,${
+      (e.clientY - r.top - r.height / 2) * 0.3
+    }px)`;
+  },
+  onMouseLeave: (e) => {
+    e.currentTarget.style.transform = "";
+  },
+};
 
 export default function ModernHero() {
-  const [showAlt, setShowAlt] = useState(false);
-  const baseRef = useRef(null);
-  const altRef = useRef(null);
-  const pxlRef = useRef(null);
-  const animRef = useRef({ t: 0, seq: 0 });
-  const showRef = useRef(false);
+  const stageRef = useRef(null);
+  const tiltRef = useRef(null);
 
+  /* Smooth 3D tilt: rAF lerp writes --mx/--my on the tilt (vanilla port of the demo) */
   useEffect(() => {
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return; // static avatar, no auto-cycling
-    const play = (toAlt) => {
-      if (!isPixel) return;
-      const canvas = pxlRef.current,
-        base = baseRef.current,
-        alt = altRef.current;
-      if (!canvas || !base || !alt) return;
-      const a = animRef.current;
-      clearTimeout(a.t);
-      const seq = ++a.seq;
-      const p1 = avatarTransition === "pixel1";
-      const ascending = p1 ? !toAlt : toAlt;
-      const frames = ascending ? PX_LADDER : [...PX_LADDER].reverse();
-      const src = p1 ? base : alt;
-      const order = shuffledTiles();
-      let i = 0;
-      const step = () => {
-        if (a.seq !== seq) return;
-        const frac = frames[i++];
-        // pixel1 handoffs: swap img↔canvas in the same tick as the matching frame, so it's never visible
-        if (p1 && toAlt && i === 1) {
-          base.style.opacity = "0";
-          alt.style.opacity = "1";
-        }
-        drawTiles(canvas, src, frac, order);
-        if (i < frames.length) a.t = setTimeout(step, PX_STEP_MS);
-        else if (p1 && !toAlt) {
-          base.style.opacity = "1";
-          alt.style.opacity = "0";
-          drawTiles(canvas, src, 0, order);
-        }
-      };
-      step();
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const stage = stageRef.current,
+      tilt = tiltRef.current;
+    if (!stage || !tilt) return;
+    let tx = 0,
+      ty = 0,
+      cx = 0,
+      cy = 0,
+      id;
+    const move = (e) => {
+      const r = stage.getBoundingClientRect();
+      tx = (e.clientX - r.left) / r.width - 0.5;
+      ty = (e.clientY - r.top) / r.height - 0.5;
     };
-    const id = setInterval(() => {
-      const next = !showRef.current;
-      showRef.current = next;
-      setShowAlt(next);
-      play(next);
-    }, 3000);
+    const leave = () => {
+      tx = ty = 0;
+    };
+    const loop = () => {
+      cx += (tx - cx) * 0.08;
+      cy += (ty - cy) * 0.08;
+      tilt.style.setProperty("--mx", cx * 2);
+      tilt.style.setProperty("--my", cy * 2);
+      id = requestAnimationFrame(loop);
+    };
+    stage.addEventListener("mousemove", move);
+    stage.addEventListener("mouseleave", leave);
+    id = requestAnimationFrame(loop);
     return () => {
-      clearInterval(id);
-      clearTimeout(animRef.current.t);
+      cancelAnimationFrame(id);
+      stage.removeEventListener("mousemove", move);
+      stage.removeEventListener("mouseleave", leave);
     };
   }, []);
 
   return (
-    <div className="hero">
-      <div>
-        <span className="eyebrow">{modernCopy.eyebrow}</span>
-        <h1>
-          Hi, I’m Tristan.
-          <br />I build{" "}
-          <span className="rot" aria-hidden="true">
-            <span className="sizer">{widestWord}</span>
-            {modernCopy.heroRotating.map((w, i) => (
-              <b key={w} style={{ animationDelay: `${i * 3}s` }}>
-                {w}
-              </b>
-            ))}
-          </span>
-          <span className="sr-only">{modernCopy.heroRotating[0]}</span> that
-          feel easy.
-        </h1>
-        <p>{modernCopy.intro}</p>
-        <div className="btns">
-          <a className="btn p" href="#projects">
-            View projects
-          </a>
-          <a className="btn" href={contact.resume}>
-            Resume (PDF)
-          </a>
+    <>
+      <Cursor />
+      <div className="hero">
+        <div>
+          <span className="eyebrow fade">{modernCopy.eyebrow}</span>
+          <h1>
+            <span className="line">
+              <span style={{ "--i": 0 }}>Hi, I’m Tristan.</span>
+            </span>
+            <span className="line">
+              <span style={{ "--i": 1 }}>
+                I build <em>web apps</em>
+              </span>
+            </span>
+            <span className="line">
+              <span style={{ "--i": 2 }}>that feel alive.</span>
+            </span>
+          </h1>
+          <p className="fade">{modernCopy.intro}</p>
+          <div className="btns fade">
+            <a className="btn p" href="#projects" {...mag}>
+              View projects
+            </a>
+            <a className="btn" href={contact.resume} download {...mag}>
+              Resume (PDF)
+            </a>
+          </div>
+          <div className="social fade">
+            <a href={contact.github}>GitHub</a>
+            <a href={contact.linkedin}>LinkedIn</a>
+            <a href={`mailto:${contact.email}`}>Email</a>
+          </div>
         </div>
-        <div className="social">
-          <a href={contact.github}>GitHub</a>
-          <a href={contact.linkedin}>LinkedIn</a>
-          <a href={`mailto:${contact.email}`}>Email</a>
+
+        <div className="stage" ref={stageRef}>
+          <div className="tilt" ref={tiltRef}>
+            <div className="blob" />
+            <div className="ring" />
+            <div className="photo">
+              <img src="/avatar.webp" alt="Tristan Vegas" />
+            </div>
+            <span className="tchip c1">Next.js</span>
+            <span className="tchip c2">React</span>
+            <span className="tchip c3">OpenAI</span>
+          </div>
         </div>
       </div>
-      <label
-        className={`avatar ${avatarTransition}${showAlt ? " show-alt" : ""}`}
-      >
-        <img ref={baseRef} src="/avatar.webp" alt="Tristan Vegas" />
-        <img
-          ref={altRef}
-          className="alt"
-          src="/original-avatar.png"
-          alt=""
-          aria-hidden="true"
-        />
-        <canvas
-          ref={pxlRef}
-          className="pxl"
-          width="900"
-          height="1200"
-          aria-hidden="true"
-        />
-      </label>
-    </div>
+    </>
   );
 }

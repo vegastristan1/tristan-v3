@@ -4,12 +4,12 @@
 
 The hero/header section of the modern v1 design originally used a hand-drawn chibi SVG illustration of Tristan as a **profile-picture placeholder** (inside the circular `.avatar` frame), with a "📷 click to add your photo" tag and an upload-on-click handler.
 
-It was replaced on 2026-10-20 by a real photo: `public/avatar.webp`, rendered in `ModernHero.jsx` as:
+It was replaced on 2026-10-20 by a real photo: `public/avatar.webp`. The same day the hero became the interactive 3D tilt stage (from `new-version-modern/Interactive Hero Demo/`), so the photo now renders inside the stage's `.photo` frame in `ModernHero.jsx`:
 
 ```jsx
-<label className="avatar">
+<div className="photo">
   <img src="/avatar.webp" alt="Tristan Vegas" />
-</label>
+</div>
 ```
 
 ### To restore the chibi placeholder
@@ -36,4 +36,4 @@ function Chibi() {
 }
 ```
 
-The original click-to-upload behavior (FileReader → replace SVG with the chosen image) and the `.tag` element are gone; the CSS for `.avatar .tag` still exists in `modern.css` if you bring the tag back.
+The original click-to-upload behavior (FileReader → replace SVG with the chosen image) and the `.tag` element are gone. Note: the old `.avatar` / `.avatar .tag` CSS was removed with the tilt-stage port — the chibi SVG now lives inside `.photo` (which clips it, so drop the bottom ellipse if it gets cut).
