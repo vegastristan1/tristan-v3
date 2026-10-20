@@ -8,9 +8,9 @@ const widestWord = [...modernCopy.heroRotating].sort(
   (a, b) => b.length - a.length,
 )[0];
 
-const PX_GRID = 30; // 30×30 = 900 tiny tiles — raise = smaller pixels
-const PX_LADDER = Array.from({ length: 11 }, (_, i) => (i / 10) ** 2); // fraction of tiles present: .01 = 1 box → 1 = all 100 (quadratic = slow start, accelerating fill)
-const PX_STEP_MS = 62;
+const PX_GRID = 50; // 50×50 = 2500 tiny tiles — raise = smaller pixels
+const PX_LADDER = Array.from({ length: 15 }, (_, i) => (i / 10) ** 2); // fraction of tiles present: .01 = 1 box → 1 = all 100 (quadratic = slow start, accelerating fill)
+const PX_STEP_MS = 67;
 const isPixel = avatarTransition === "pixel1" || avatarTransition === "pixel2";
 
 function shuffledTiles() {
@@ -30,11 +30,16 @@ function drawTiles(canvas, img, frac, order) {
   if (!frac || !img.naturalWidth) return;
   const nw = img.naturalWidth,
     nh = img.naturalHeight;
-  const side = Math.min(nw, nh),
-    sx = (nw - side) / 2,
-    sy = (nh - side) / 2; // center-crop = CSS object-fit: cover
-  const tw = side / PX_GRID,
-    dW = W / PX_GRID;
+  // cover-crop centered = CSS object-fit: cover on the imgs below (canvas aspect must match .avatar)
+  const s = Math.max(W / nw, H / nh),
+    sw = W / s,
+    sh = H / s,
+    sx = (nw - sw) / 2,
+    sy = (nh - sh) / 2,
+    tw = sw / PX_GRID,
+    th = sh / PX_GRID,
+    dW = W / PX_GRID,
+    dH = H / PX_GRID;
   const shown = Math.round(frac * PX_GRID * PX_GRID);
   for (let k = 0; k < shown; k++) {
     const idx = order[k],
@@ -43,13 +48,13 @@ function drawTiles(canvas, img, frac, order) {
     ctx.drawImage(
       img,
       sx + c * tw,
-      sy + r * tw,
+      sy + r * th,
       tw,
-      tw,
+      th,
       c * dW,
-      r * dW,
+      r * dH,
       dW,
-      dW,
+      dH,
     );
   }
 }
@@ -156,8 +161,8 @@ export default function ModernHero() {
         <canvas
           ref={pxlRef}
           className="pxl"
-          width="640"
-          height="640"
+          width="900"
+          height="1200"
           aria-hidden="true"
         />
       </label>
