@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { contact, modernCopy } from "../../data/index.js";
 
 /* Ring cursor that grows over links and buttons */
@@ -34,6 +34,14 @@ const mag = {
 export default function ModernHero() {
   const stageRef = useRef(null);
   const tiltRef = useRef(null);
+  const [showAlt, setShowAlt] = useState(false);
+
+  /* Photo auto-swaps every 3s with a fade crossfade; static under reduced-motion */
+  useEffect(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setShowAlt((v) => !v), 3000);
+    return () => clearInterval(id);
+  }, []);
 
   /* Smooth 3D tilt: rAF lerp writes --mx/--my on the tilt (vanilla port of the demo) */
   useEffect(() => {
@@ -112,6 +120,12 @@ export default function ModernHero() {
             <div className="ring" />
             <div className="photo">
               <img src="/avatar.webp" alt="Tristan Vegas" />
+              <img
+                className={`alt${showAlt ? " show-alt" : ""}`}
+                src="/original-avatar.png"
+                alt=""
+                aria-hidden="true"
+              />
             </div>
             <span className="tchip c1">Next.js</span>
             <span className="tchip c2">React</span>

@@ -12,6 +12,8 @@ It was replaced on 2026-10-20 by a real photo: `public/avatar.webp`. The same da
 </div>
 ```
 
+The photo auto-swaps to `public/original-avatar.png` every 3s with a 0.4s fade crossfade (`.photo img.alt` in `modern.css`); under `prefers-reduced-motion` it stays on `avatar.webp`. No pixel/canvas mode — fade only.
+
 ### To restore the chibi placeholder
 
 Add this component to `ModernHero.jsx` and render `<Chibi />` instead of the `<img>`:

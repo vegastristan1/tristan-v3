@@ -253,6 +253,16 @@
   object-position: 50% 25%;
   display: block;
 }
+/* auto-swap layer: opacity ramp over the base photo = crossfade */
+.modern .photo img.alt {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.modern .photo img.alt.show-alt {
+  opacity: 1;
+}
 .modern .tchip {
   background: var(--surface);
   border: 1px solid var(--line);
