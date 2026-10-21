@@ -18,8 +18,8 @@ export const contact = {
   githubLabel: "vegastristan1",
   linkedin: "https://www.linkedin.com/in/tristan-vegas",
   linkedinLabel: "linkedin.com/in/tristan-vegas",
-  website: "https://tristan-portfolio-v1.vercel.app",
-  websiteLabel: "tristan-portfolio-v1.vercel.app",
+  website: "https://tristan-vegas.vercel.app",
+  websiteLabel: "tristan-vegas.vercel.app",
   resume: "/Tristan-Vegas-Resume.pdf",
 };
 
@@ -36,25 +36,22 @@ export const sectionNum = {
 export const experience = [
   {
     period: "June 2025 — August 2026",
-    title: "IT System & Data Analyst",
+    title: "IT System & Data Analyst - IT User Champion",
     company: "Milaor Trading Corporation",
     place: "Brgy. San Jose, Milaor, Camarines Sur — Nestlé Warehouse",
     type: "Full-time",
     bullets: [
-      "Responsible for supervising warehouse encoders, ensuring accurate and timely encoding of sales and inventory data.",
-      "Utilize Microsoft Excel to prepare sales reports, monitor inventory, and organize operational data.",
-      "Utilize SQL to retrieve, manage, and analyze sales and inventory data.",
-      "Perform data analysis to monitor sales performance, stock levels, and product movement.",
-      "Monitor inventory records and assist in identifying stock discrepancies and data inconsistencies.",
-      "Prepare sales, inventory, and operational reports to support management decision-making.",
+      "Supervised warehouse encoders for accurate sales and inventory data",
+      "Built sales and inventory reports with Excel and SQL",
+      "Flagged stock discrepancies to support management decisions",
     ],
   },
   {
     period: "May 2022 — March 2024",
-    title: "Full Stack Developer",
+    title: "Web Developer (Full-Stack & Mobile)",
     company: "Foxhole QA",
     place: "Austin, Texas, United States",
-    type: "Remote",
+    type: "On-Site Branch",
     stack: [
       "PHP",
       "Laravel",
@@ -62,20 +59,20 @@ export const experience = [
       "MySQL",
       "Node.js",
       "Swift (iOS)",
-      "Android",
       "Firebase",
-      "VS Code",
+      "Hack",
+      "Kotlin (Android)",
+      "CMS",
     ],
     bullets: [
-      "Created and managed the Foxhole QA website with an admin dashboard for updates on blogs, featured works, and testimonials.",
-      "Developed full-stack web applications and mobile applications for both iOS and Android.",
-      "Specialized in Mobile Development and Data Analytics tasks, ensuring diverse client needs were met effectively.",
-      "Performed manual QA testing to identify and report bugs, ensuring reliable releases.",
-      "Provided ongoing maintenance and support for website functionality.",
+      "Built the company website with an admin dashboard for blogs, works and testimonials",
+      "Developed web, iOS and Android apps (PHP, Laravel, Vue, Swift, Firebase)",
+      "Manual QA testing and ongoing maintenance",
+      "UI fixes with CSS on client projects, including CommonSpirit Health",
     ],
   },
   {
-    period: "Ongoing",
+    period: "2021 - Present",
     title: "Mobile Developer / Web Developer",
     company: "Freelance",
     place: "Remote",
@@ -103,7 +100,7 @@ export const projects = [
     name: "AI Developer Task Manager",
     period: "Personal Project",
     description:
-      "An AI-powered task and project management platform for software developers — turns high-level requirements into actionable tasks, sprints and subtasks with AI assistance and human approval at every step.",
+      "Turns requirements into tasks, sprints and subtasks with AI help and approval at every step. Kanban, dependencies, command palette, dark/light mode.",
     bullets: [
       "Full-stack Next.js + TypeScript app on PostgreSQL (Neon) with Prisma ORM, Auth.js sessions and Zod-validated route handlers and server actions.",
       "AI actions — task breakdown, implementation plans, acceptance criteria, complexity estimates and technical review — go through an explicit approve/reject workflow.",
@@ -112,6 +109,12 @@ export const projects = [
     tools: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "OpenAI"],
     featured: true,
     url: "https://ai-developer-task-manager.vercel.app",
+    shots: [
+      { label: "AI Chat", src: "/projects/ai-task-manager/ai-chat.webp" },
+      { label: "Board", src: "/projects/ai-task-manager/board.webp" },
+      { label: "Dashboard", src: "/projects/ai-task-manager/dashboard.webp" },
+      { label: "Projects", src: "/projects/ai-task-manager/projects.webp" },
+    ],
   },
   {
     name: "Dev Hub",
@@ -126,6 +129,27 @@ export const projects = [
     tools: ["Node.js", "Express", "React", "Full-Stack"],
     featured: true,
     url: "https://dev-hub-beta-tan.vercel.app",
+    shots: "soon",
+  },
+  {
+    name: "Foxhole QA Website",
+    period: "Professional",
+    description:
+      "Company website with a custom admin dashboard for managing blogs, featured work and testimonials. Built and maintained during my time at Foxhole QA.",
+    bullets: [],
+    tools: ["PHP", "Laravel", "Vue.js", "MySQL"],
+    url: "https://foxholeqa.com/",
+    urlLabel: "Live site",
+  },
+  {
+    name: "CommonSpirit Health (client project)",
+    period: "Client work via Foxhole QA",
+    description:
+      "Fixed UI issues with CSS on the public CommonSpirit Health website, which uses a CMS for adding new pages and event posts. Delivered as part of a Foxhole QA client engagement.",
+    bullets: [],
+    tools: ["CSS", "UI fixes", "CMS"],
+    url: "https://www.commonspirit.org/",
+    urlLabel: "Visit site",
   },
   {
     name: "Warehouse Inventory System",
@@ -140,6 +164,7 @@ export const projects = [
     ],
     tools: ["React.js", "SQL Server", "SSMS", "Full-Stack"],
     featured: true,
+    shots: "soon",
   },
   {
     name: "Tour & Travel Management System",
@@ -156,6 +181,14 @@ export const projects = [
     featured: true,
   },
   {
+    name: "Mobile Management System (Prototype)",
+    period: "Prototype",
+    description:
+      "Prototype mobile app for iOS and Android covering attendance, bookings and inventory management. Not released on the App Store or Google Play.",
+    bullets: [],
+    tools: ["iOS", "Android"],
+  },
+  {
     name: "Student Enrollment System",
     period: "January 2025 — March 2025",
     description:
@@ -167,6 +200,7 @@ export const projects = [
     ],
     tools: ["PHP (Laravel)", "MySQL", "REST API"],
     featured: true,
+    shots: "soon",
   },
   {
     name: "Lending Management System",

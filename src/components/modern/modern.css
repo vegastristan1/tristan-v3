@@ -397,6 +397,201 @@
   padding: 7px 16px;
   font-size: 14px;
 }
+/* ——— project screenshots: album stack + "coming soon" + lightbox (from design HTML) ——— */
+.modern .has-album {
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 300px);
+  column-gap: 32px;
+  align-items: center;
+}
+.modern .has-album > * {
+  grid-column: 1;
+}
+.modern .has-album > .album {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  margin: 10px 0 34px;
+}
+.modern .has-album > .soon {
+  grid-column: 2;
+  grid-row: 1 / span 4;
+  margin: 10px 0;
+}
+.modern .album {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 16 / 10.5;
+  cursor: pointer;
+  outline-offset: 6px;
+}
+.modern .album img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 84%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  transform-origin: bottom left;
+  transform: translate(calc(var(--p, 0) * 6%), calc(var(--p, 0) * -3.5%)) rotate(calc(var(--p, 0) * 2deg)) scale(calc(1 - var(--p, 0) * 0.03));
+  filter: brightness(calc(1 - var(--p, 0) * 0.1));
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.55s;
+}
+.modern .album:hover img {
+  transform: translate(calc(var(--p, 0) * 8%), calc(var(--p, 0) * -4.5%)) rotate(calc(var(--p, 0) * 2.6deg)) scale(calc(1 - var(--p, 0) * 0.03));
+}
+.modern .albumcap {
+  position: absolute;
+  left: 0;
+  bottom: -28px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.modern .soon {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 16 / 9;
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  background: var(--chip);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.modern .card:not(.has-album) > .soon {
+  max-width: none;
+  margin: 0 0 12px;
+}
+.modern .card:not(.has-album) > .album {
+  margin: 6px 0 42px;
+}
+@media (max-width: 720px) {
+  .modern .has-album {
+    grid-template-columns: 1fr;
+  }
+  .modern .has-album > .album,
+  .modern .has-album > .soon {
+    grid-column: 1;
+    grid-row: auto;
+    margin: 18px 0 34px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .modern .album img {
+    transition: none;
+  }
+}
+/* lightbox */
+.modern .lb {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(env(safe-area-inset-top, 0px) + 16px) 16px calc(env(safe-area-inset-bottom, 0px) + 16px);
+  background: rgba(10, 8, 6, 0.78);
+  backdrop-filter: blur(6px);
+}
+.modern .lbbox {
+  width: min(1000px, 100%);
+  max-height: 100%;
+  overflow: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+.modern .lbhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+.modern .lbx {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  cursor: pointer;
+}
+.modern .lbframe {
+  position: relative;
+}
+.modern .lbsc {
+  max-height: 62vh;
+  overflow: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--chip);
+}
+.modern .lbsc img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.modern .lbn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  color: var(--text);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.modern .lbp {
+  left: 10px;
+}
+.modern .lbnx {
+  right: 10px;
+}
+.modern .lbth {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.modern .lbth button {
+  flex: 0 0 auto;
+  width: 120px;
+  padding: 0;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: none;
+  cursor: pointer;
+  opacity: 0.65;
+}
+.modern .lbth button.on {
+  border-color: var(--accent);
+  opacity: 1;
+}
+.modern .lbth img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center top;
+}
 .modern .tl {
   border-left: 2px solid var(--line);
   margin-left: 6px;
@@ -480,7 +675,7 @@
   border: 1.5px solid var(--accent);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 30;
+  z-index: 60; /* above the lightbox (50), as in the design */
   transition: width 0.2s, height 0.2s, margin 0.2s, background 0.2s;
 }
 .modern .cursor.big {
