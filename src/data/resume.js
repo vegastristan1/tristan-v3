@@ -41,9 +41,11 @@ export const experience = [
     place: "Brgy. San Jose, Milaor, Camarines Sur — Nestlé Warehouse",
     type: "Full-time",
     bullets: [
-      "Supervised warehouse encoders for accurate sales and inventory data",
-      "Built sales and inventory reports with Excel and SQL",
-      "Flagged stock discrepancies to support management decisions",
+      "Served as the first point of contact for clients, salespeople, encoders and staff — resolving system errors and access issues day to day.",
+      "Acted as the bridge between end users and the Nestlé IT & sales teams, communicating issues and follow-ups until resolved.",
+      "Supervised warehouse encoders entering sales and inventory data into Syspro, DMS, MyBuddy, and an Excel-based OLAP cube (local database queried via Excel).",
+      "Prepared and sent end-of-day sales and inventory reports to Nestlé, plus other operational reporting.",
+      "Flagged stock discrepancies to support management decisions.",
     ],
   },
   {
