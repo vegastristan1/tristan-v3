@@ -65,7 +65,12 @@ export default function ModernProjects() {
               <h3>{p.name}</h3>
               <p style={{ margin: 0 }}>{p.description}</p>
               {p.url && (
-                <a className="btn demo-btn" href={p.url}>
+                <a
+                  className="btn demo-btn"
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {p.urlLabel || "Live demo"} ↗
                 </a>
               )}
