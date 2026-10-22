@@ -1,5 +1,12 @@
 import Reveal from './Reveal.jsx'
-import { projects, sectionNum } from '../data/index.js'
+import { projects, sectionNum, typeCategory } from '../data/index.js'
+
+const TYPE_CLASS = {
+  personal: 'bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20',
+  company: 'bg-sky-500/10 text-sky-400 ring-1 ring-sky-500/20',
+  client: 'bg-amber-500/10 text-amber-400 ring-1 ring-amber-500/20',
+  college: 'bg-zinc-500/10 text-zinc-400 ring-1 ring-zinc-500/20',
+}
 
 export default function Projects() {
   return (
@@ -36,7 +43,16 @@ export default function Projects() {
                         <path d="m8 6-6 6 6 6" />
                       </svg>
                     </div>
-                    <span className="font-mono text-[11px] text-zinc-500">{p.period}</span>
+                    <span className="flex flex-wrap items-center justify-end gap-2">
+                      {p.type && (
+                        <span className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${TYPE_CLASS[typeCategory(p.type)]}`}>
+                          {p.type}
+                        </span>
+                      )}
+                      {p.period && (
+                        <span className="font-mono text-[11px] text-zinc-500">{p.period}</span>
+                      )}
+                    </span>
                   </div>
 
                   <h3 className="mt-4 font-semibold text-white transition group-hover:text-emerald-400">{p.name}</h3>

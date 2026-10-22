@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { projects } from "../../data/index.js";
+import { projects, typeCategory } from "../../data/index.js";
 import ProjectLightbox from "./ProjectLightbox.jsx";
 
 export default function ModernProjects() {
@@ -60,6 +60,11 @@ export default function ModernProjects() {
             >
               {media}
               <div className="meta">
+                {p.type && (
+                  <span className="type" data-type={typeCategory(p.type)}>
+                    {p.type}
+                  </span>
+                )}
                 {[p.period, (p.tools || []).join(", ")].filter(Boolean).join(" · ")}
               </div>
               <h3>{p.name}</h3>

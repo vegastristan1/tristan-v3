@@ -99,7 +99,7 @@ export const experience = [
 export const projects = [
   {
     name: "AI Developer Task Manager",
-    period: "Personal Project",
+    type: "Personal",
     description:
       "Turns requirements into tasks, sprints and subtasks with AI help and approval at every step. Kanban, dependencies, command palette, dark/light mode.",
     bullets: [
@@ -119,7 +119,7 @@ export const projects = [
   },
   {
     name: "Dev Hub",
-    period: "Personal Project",
+    type: "Personal",
     description:
       "A local-first developer hub that shows, runs and guides every project in one place — auto-detects apps, displays your stack, blueprints and setup guides.",
     bullets: [
@@ -134,7 +134,7 @@ export const projects = [
   },
   {
     name: "Foxhole QA Website",
-    period: "Professional",
+    type: "Foxhole QA",
     description:
       "Company website with a custom admin dashboard for managing blogs, featured work and testimonials. Built and maintained during my time at Foxhole QA.",
     bullets: [],
@@ -144,7 +144,7 @@ export const projects = [
   },
   {
     name: "CommonSpirit Health (client project)",
-    period: "Client work via Foxhole QA",
+    type: "Client work via Foxhole QA",
     description:
       "Fixed UI issues with CSS on the public CommonSpirit Health website, which uses a CMS for adding new pages and event posts. Delivered as part of a Foxhole QA client engagement.",
     bullets: [],
@@ -154,7 +154,7 @@ export const projects = [
   },
   {
     name: "Warehouse Inventory System",
-    period: "Professional",
+    type: "MTC",
     description:
       "A web-based warehouse inventory management system to monitor and maintain accurate inventory counts and item records, integrated directly with the company SQL Server database.",
     bullets: [
@@ -174,9 +174,9 @@ export const projects = [
   },
   {
     name: "Tour & Travel Management System",
-    period: "Professional",
+    type: "Capstone Project",
     description:
-      "A full tour & travel platform with a client-facing booking website and a mobile app for tour company administrators.",
+      "A full tour & travel platform with a client-facing booking website and a mobile app for tour company administrators. Capstone project built end-to-end; not deployed to a live business at the time.",
     bullets: [
       "Client-facing website for browsing and booking pre-made tour packages with detailed itineraries.",
       "Itinerary and tour management for creating schedules and activities.",
@@ -188,7 +188,7 @@ export const projects = [
   },
   {
     name: "Mobile Management System (Prototype)",
-    period: "Prototype",
+    type: "Foxhole QA",
     description:
       "Prototype mobile app for iOS and Android covering attendance, bookings and inventory management. Not released on the App Store or Google Play.",
     bullets: [],
@@ -197,6 +197,7 @@ export const projects = [
   {
     name: "Student Enrollment System",
     period: "January 2025 — March 2025",
+    type: "Freelance",
     description:
       "A web application backend for student enrollment, covering authentication, registration, and course assignments.",
     bullets: [
@@ -211,6 +212,7 @@ export const projects = [
   {
     name: "Lending Management System",
     period: "March 2024 — February 2025",
+    type: "Freelance",
     description:
       "A standalone Windows desktop lending management system with loan tracking, payment scheduling, and interest calculation.",
     bullets: [
@@ -222,7 +224,7 @@ export const projects = [
   },
   {
     name: "Desktop POS System — Pizza Restaurant",
-    period: "College Project",
+    type: "College",
     description:
       "A desktop Point-of-Sales system inspired by a pizza restaurant environment, built independently for learning and experimentation.",
     bullets: [
@@ -235,6 +237,7 @@ export const projects = [
   {
     name: "Educational Multiplayer Math Game",
     period: "April 2021 — June 2022",
+    type: "Freelance · Enzo",
     description:
       "A prototype for a multiplayer math-learning mobile game with a real-time backend server.",
     bullets: [
@@ -246,6 +249,7 @@ export const projects = [
   {
     name: "Laundry Shop Web & Mobile Application",
     period: "April 2021 — July 2021",
+    type: "Freelance",
     description:
       "A full-stack web and mobile application for a laundry shop with customer management and payment integration.",
     bullets: [

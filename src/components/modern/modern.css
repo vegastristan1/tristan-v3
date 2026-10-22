@@ -383,6 +383,32 @@
   padding: 3px 10px;
   font-size: 13px;
 }
+.modern .type {
+  display: inline-block;
+  margin-right: 7px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+/* mid-tone hues chosen to stay readable on both light and dark chips */
+.modern .type[data-type="personal"] {
+  color: #16a34a;
+  background: rgba(22, 163, 74, 0.13);
+}
+.modern .type[data-type="company"] {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.13);
+}
+.modern .type[data-type="client"] {
+  color: #b45309;
+  background: rgba(180, 83, 9, 0.15);
+}
+.modern .type[data-type="college"] {
+  color: #78716c;
+  background: rgba(120, 113, 108, 0.15);
+}
 .modern .feat {
   grid-column: 1 / -1;
   display: grid;

@@ -14,6 +14,15 @@ export const version = /^\/v1\/?$/.test(path)
       : ROOT_VERSION;
 export const isV2 = version === "v2";
 
+// Badge color category for a project's type label — key maps to per-version styling.
+export function typeCategory(type = "") {
+  const t = type.toLowerCase();
+  if (t.includes("capstone") || t.includes("college")) return "college";
+  if (t.includes("freelance") || t.includes("client")) return "client";
+  if (t.includes("personal")) return "personal";
+  return "company";
+}
+
 // Version-specific presentation copy (design text only — shared facts live in resume.js).
 export const modernCopy = {
   eyebrow: "Open to work · Philippines 🇵🇭",
