@@ -51,8 +51,7 @@ export default function Navbar() {
           ))}
           <a
             href={contact.resume}
-            target="_blank"
-            rel="noopener noreferrer"
+            download
             className="ml-3 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-zinc-950 transition hover:bg-emerald-400"
           >
             Download CV
@@ -96,8 +95,7 @@ export default function Navbar() {
           ))}
           <a
             href={contact.resume}
-            target="_blank"
-            rel="noopener noreferrer"
+            download
             onClick={() => setOpen(false)}
             className="mt-2 block rounded-lg bg-emerald-500 px-3 py-3 text-center text-sm font-semibold text-zinc-950 transition hover:bg-emerald-400"
           >

@@ -114,8 +114,7 @@ export default function Contact() {
             </a>
             <a
               href={contact.resume}
-              target="_blank"
-              rel="noopener noreferrer"
+              download
               className="rounded-lg border border-zinc-700 bg-zinc-900/60 px-6 py-3 text-sm font-semibold text-zinc-200 transition hover:border-emerald-500/50 hover:text-emerald-400"
             >
               Download CV
