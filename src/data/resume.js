@@ -164,7 +164,12 @@ export const projects = [
     ],
     tools: ["React.js", "SQL Server", "SSMS", "Full-Stack"],
     featured: true,
-    shots: "soon",
+    shots: [
+      { label: "AI Chat", src: "/projects/mtc/dashboard.png" },
+      { label: "Board", src: "/projects/mtc/pending-sales-order.png" },
+      { label: "Dashboard", src: "/projects/mtc/sales-order-details.png" },
+      { label: "Projects", src: "/projects/mtc/inventory.png" },
+    ],
   },
   {
     name: "Tour & Travel Management System",
