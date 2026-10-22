@@ -105,7 +105,8 @@ export default function HeroCreative({ showGrid = true, showHex = false }) {
               </a>
               <a
                 href={contact.resume}
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-lg border border-zinc-700 bg-zinc-900/60 px-6 py-3 text-sm font-semibold text-zinc-200 transition hover:border-emerald-500/50 hover:text-emerald-400"
               >
                 Download CV

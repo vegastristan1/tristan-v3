@@ -60,7 +60,6 @@ export const experience = [
       "Node.js",
       "Swift (iOS)",
       "Firebase",
-      "Hack",
       "Kotlin (Android)",
       "CMS",
     ],

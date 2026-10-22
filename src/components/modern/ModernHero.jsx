@@ -103,7 +103,13 @@ export default function ModernHero() {
             <a className="btn p" href="#projects" {...mag}>
               View projects
             </a>
-            <a className="btn" href={contact.resume} download {...mag}>
+            <a
+              className="btn"
+              href={contact.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              {...mag}
+            >
               Resume (PDF)
             </a>
           </div>
