@@ -341,3 +341,21 @@ export const education = [
 ];
 
 export const languages = ["English", "Filipino"];
+
+export const references = [
+  {
+    name: "Ms. Shastine Gutierrez",
+    title: "HUman Resource Specialist",
+    company: "Milaor Trading Corporation",
+    email: "hrshas278@gmail.com",
+    phone: "+63 960 856 7413",
+  },
+  {
+    name: "Ms. Charmaine Daluro",
+    title: "Human Resource",
+    company: "SDW Web Solutions",
+    email: "hr@sdw-solutions.com",
+    phone: "+63 935 087 5024",
+  },
+
+];
