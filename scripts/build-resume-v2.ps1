@@ -1,4 +1,4 @@
-# Rebuilds the V2 resume files into public/ from scripts/resume-v2.html.
+# Regenerates scripts/resume-v2.html from src/data/resume.js, then rebuilds the V2 resume files into public/.
 #   PDF  : Microsoft Edge headless print-to-pdf
 #   DOCX : Microsoft Word opens the HTML and saves as .docx
 # Run: powershell -ExecutionPolicy Bypass -File scripts\build-resume-v2.ps1
@@ -10,6 +10,9 @@ $outDir = Join-Path $root 'public'
 $pdfPath = Join-Path $outDir 'Tristan-Vegas-Resume.pdf'
 $docxPath = Join-Path $outDir 'Tristan-Vegas-Resume.docx'
 $tmpDocx = Join-Path $outDir '_wdout.docx'
+
+# Step 0: render HTML from the single data source (src/data/resume.js)
+node (Join-Path $PSScriptRoot 'generate-resume-html.mjs')
 
 $edge = @(
     "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe",

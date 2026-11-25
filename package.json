@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/inject-fallback.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:resume": "powershell -ExecutionPolicy Bypass -File scripts/build-resume-v2.ps1"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

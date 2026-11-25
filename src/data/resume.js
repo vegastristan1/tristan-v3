@@ -120,6 +120,7 @@ export const projects = [
   {
     name: "Dev Hub",
     type: "Personal",
+    resume: false,
     description:
       "A local-first developer hub that shows, runs and guides every project in one place — auto-detects apps, displays your stack, blueprints and setup guides.",
     bullets: [
@@ -175,6 +176,7 @@ export const projects = [
   {
     name: "Tour & Travel Management System",
     type: "Capstone Project",
+    resume: false,
     description:
       "A full tour & travel platform with a client-facing booking website and a mobile app for tour company administrators. Capstone project built end-to-end; not deployed to a live business at the time.",
     bullets: [
@@ -189,6 +191,7 @@ export const projects = [
   {
     name: "Mobile Management System (Prototype)",
     type: "Foxhole QA",
+    resume: false,
     description:
       "Prototype mobile app for iOS and Android covering attendance, bookings and inventory management. Not released on the App Store or Google Play.",
     bullets: [],
@@ -198,6 +201,7 @@ export const projects = [
     name: "Student Enrollment System",
     period: "January 2025 — March 2025",
     type: "Freelance",
+    resume: false,
     description:
       "A web application backend for student enrollment, covering authentication, registration, and course assignments.",
     bullets: [
@@ -225,6 +229,7 @@ export const projects = [
   {
     name: "Desktop POS System — Pizza Restaurant",
     type: "College",
+    resume: false,
     description:
       "A desktop Point-of-Sales system inspired by a pizza restaurant environment, built independently for learning and experimentation.",
     bullets: [
@@ -238,6 +243,7 @@ export const projects = [
     name: "Educational Multiplayer Math Game",
     period: "April 2021 — June 2022",
     type: "Freelance · Enzo",
+    resume: false,
     description:
       "A prototype for a multiplayer math-learning mobile game with a real-time backend server.",
     bullets: [
@@ -250,6 +256,7 @@ export const projects = [
     name: "Laundry Shop Web & Mobile Application",
     period: "April 2021 — July 2021",
     type: "Freelance",
+    resume: false,
     description:
       "A full-stack web and mobile application for a laundry shop with customer management and payment integration.",
     bullets: [
